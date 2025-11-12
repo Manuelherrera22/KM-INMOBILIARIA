@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+:root {
+  --background: 240 9% 6%;
+  --foreground: 210 40% 96%;
+  --muted: 240 7% 18%;
+  --muted-foreground: 240 5% 65%;
+  --popover: 240 8% 7%;
+  --popover-foreground: 210 40% 96%;
+  --card: 240 8% 8%;
+  --card-foreground: 210 40% 96%;
+  --border: 240 9% 18%;
+  --input: 240 9% 18%;
+  --primary: 210 96% 62%;
+  --primary-foreground: 222 47% 11%;
+  --secondary: 268 83% 75%;
+  --secondary-foreground: 271 92% 15%;
+  --accent: 168 85% 62%;
+  --accent-foreground: 168 100% 10%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 210 40% 98%;
+  --ring: 220 85% 70%;
+  --radius: 1rem;
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --font-sans: var(--font-geist-sans), "Inter", system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: var(--font-geist-mono), "Roboto Mono", ui-monospace, SFMono-Regular,
+    Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+:root *,
+:root *::before,
+:root *::after {
+  border-color: hsl(var(--border));
+}
+
+body {
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #0c1224, #05010c);
+  color: hsl(var(--foreground));
+  font-family: var(--font-geist-sans), "Inter", system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.backdrop-grid {
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.05) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.05) 1px,
+      transparent 1px
+    );
+  background-size: 48px 48px;
+}
