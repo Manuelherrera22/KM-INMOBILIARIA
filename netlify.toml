@@ -1,0 +1,9 @@
+[[redirects]]
+  from = "/_next/static/*"
+  to = "/_next/static/:splat"
+  status = 200
+
+[build]
+  base = "KM_inmobiliaria_2025-11-12_11-50-39-019Z"
+  command = "npm run build"
+  publish = ".next"
