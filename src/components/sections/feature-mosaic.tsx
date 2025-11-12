@@ -76,11 +76,11 @@ const featureTiles = [
 export function FeatureMosaic() {
   return (
     <section className="py-20 sm:py-24">
-      <div className="mx-auto max-w-6xl px-6 sm:px-8">
+      <div className="mx-auto max-w-6xl px-4 sm:px-8">
         <SectionHeading
-          eyebrow="Suite inmobiliaria integral"
-          title="Domina cada etapa del ciclo comercial sin cambiar de plataforma."
-          description="Centraliza toda la operación inmobiliaria con un ecosistema modular donde cada funcionalidad se conecta para ofrecer experiencias memorables."
+          eyebrow="Suite inmobiliaria LATAM"
+          title="Domina cada etapa del ciclo comercial en todos tus países."
+          description="Centraliza la operación regional con workflows listos para portales latinoamericanos, flujo fiscal multi-moneda y equipos distribuidos."
         />
         <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {featureTiles.map((tile, index) => (

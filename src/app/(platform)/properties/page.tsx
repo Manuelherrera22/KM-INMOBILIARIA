@@ -90,14 +90,14 @@ export default function PropertiesPage() {
         onValueChange={setActiveTab}
         className="rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur"
       >
-        <TabsList className="flex w-full justify-start gap-2 rounded-full bg-black/30 p-1 text-xs uppercase">
-          <TabsTrigger value="inventario" className="rounded-full data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
+        <TabsList className="flex w-full justify-start gap-2 overflow-x-auto whitespace-nowrap rounded-full bg-black/30 p-1 text-xs uppercase">
+          <TabsTrigger value="inventario" className="whitespace-nowrap rounded-full data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
             Inventario activo
           </TabsTrigger>
-          <TabsTrigger value="publicacion" className="rounded-full data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
+          <TabsTrigger value="publicacion" className="whitespace-nowrap rounded-full data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
             Publicación multicanal
           </TabsTrigger>
-          <TabsTrigger value="tours" className="rounded-full data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
+          <TabsTrigger value="tours" className="whitespace-nowrap rounded-full data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
             Tours virtuales y assets
           </TabsTrigger>
         </TabsList>

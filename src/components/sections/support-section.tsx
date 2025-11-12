@@ -9,19 +9,19 @@ import { Badge } from "@/components/ui/badge";
 const supportChannels = [
   {
     title: "Chat asistido 24/7",
-    description: "Bots entrenados + agentes humanos con contexto completo.",
+    description: "Bots entrenados + agentes humanos con contexto completo (es/en/pt).",
     icon: MessageCircle,
     response: "< 2 min",
   },
   {
     title: "Videollamadas co-browsing",
-    description: "Recorridos guiados, anotaciones compartidas y acuerdo instantáneo.",
+    description: "Recorridos guiados, anotaciones compartidas y acuerdo instantáneo con traducción simultánea.",
     icon: Video,
     response: "Reserva inmediata",
   },
   {
     title: "Línea comercial prioritaria",
-    description: "Atención telefónica con enrutamiento inteligente y grabaciones.",
+    description: "Atención telefónica con enrutamiento inteligente y grabaciones según país.",
     icon: PhoneCall,
     response: "Disponible 9-21h",
   },
@@ -29,9 +29,9 @@ const supportChannels = [
 
 export function SupportSection() {
   return (
-    <section id="soporte" className="pb-24 scroll-mt-32">
-      <div className="mx-auto max-w-6xl px-6 sm:px-8">
-        <div id="contacto" className="rounded-3xl border border-white/10 bg-gradient-to-br from-primary/20 via-black/40 to-secondary/20 p-10 backdrop-blur">
+    <section id="soporte" className="pb-20 sm:pb-24 scroll-mt-32">
+      <div className="mx-auto max-w-6xl px-4 sm:px-8">
+        <div id="contacto" className="rounded-3xl border border-white/10 bg-gradient-to-br from-primary/20 via-black/40 to-secondary/20 p-8 sm:p-10 backdrop-blur">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -44,18 +44,19 @@ export function SupportSection() {
                 Atención al cliente premium
               </Badge>
               <h2 className="text-3xl font-semibold text-white sm:text-4xl">
-                Acompañamiento experto para tus clientes y tu equipo.
+                Soporte regional para clientes y equipos en toda Latinoamérica.
               </h2>
               <p className="text-base text-muted-foreground">
                 Conecta con asesores en vivo, chatbots inteligentes y videollamadas interactivas.
-                Automatiza respuestas frecuentes y escaladas con SLA garantizados.
+                Automatiza respuestas frecuentes y escaladas con SLA garantizados en español,
+                portugués e inglés, cubriendo husos horarios GMT-6, GMT-5 y GMT-3.
               </p>
               <div className="flex flex-wrap gap-3 text-xs text-muted-foreground">
                 <span className="rounded-full border border-white/20 bg-black/30 px-3 py-1">
-                  Centros de ayuda personalizados
+                  Centros de ayuda geolocalizados
                 </span>
                 <span className="rounded-full border border-white/20 bg-black/30 px-3 py-1">
-                  Encuestas NPS automáticas
+                  Encuestas NPS regionales
                 </span>
                 <span className="rounded-full border border-white/20 bg-black/30 px-3 py-1">
                   Integración con Zendesk, HubSpot, Freshdesk

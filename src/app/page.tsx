@@ -9,15 +9,17 @@ import { DocumentSuiteSection } from "@/components/sections/document-suite-secti
 import { AnalyticsMarketingSection } from "@/components/sections/analytics-marketing-section";
 import { SupportSection } from "@/components/sections/support-section";
 import { CtaSection } from "@/components/sections/cta-section";
+import { LatamNetworkSection } from "@/components/sections/latam-network-section";
 
 export default function HomePage() {
   return (
     <div className="relative">
       <SiteNavbar />
       <div className="pointer-events-none fixed inset-0 -z-10 backdrop-grid opacity-40" />
-      <main className="relative pt-32 sm:pt-36">
+      <main className="relative pt-24 sm:pt-36">
         <HeroSection />
         <PropertyShowcaseSection />
+        <LatamNetworkSection />
         <FeatureMosaic />
         <VirtualTourSection />
         <CrmAutomationSection />

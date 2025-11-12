@@ -74,14 +74,14 @@ export default function AutomationsPage() {
         onValueChange={setTab}
         className="rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur"
       >
-        <TabsList className="flex w-full justify-start gap-2 rounded-full bg-black/30 p-1 text-xs uppercase">
-          <TabsTrigger value="workflows" className="rounded-full data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
+        <TabsList className="flex w-full justify-start gap-2 overflow-x-auto whitespace-nowrap rounded-full bg-black/30 p-1 text-xs uppercase">
+          <TabsTrigger value="workflows" className="whitespace-nowrap rounded-full data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
             Workflows activos
           </TabsTrigger>
-          <TabsTrigger value="analytics" className="rounded-full data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
+          <TabsTrigger value="analytics" className="whitespace-nowrap rounded-full data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
             Analítica y optimización
           </TabsTrigger>
-          <TabsTrigger value="journeys" className="rounded-full data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
+          <TabsTrigger value="journeys" className="whitespace-nowrap rounded-full data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
             Journeys destacados
           </TabsTrigger>
         </TabsList>
@@ -104,41 +104,43 @@ export default function AutomationsPage() {
                 Auto optimizar
               </Toggle>
             </CardHeader>
-            <CardContent className="overflow-hidden rounded-2xl border border-white/10 bg-white/5">
-              <Table>
-                <TableHeader>
-                  <TableRow className="border-white/10">
-                    <TableHead className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
-                      Workflow
-                    </TableHead>
-                    <TableHead className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
-                      Audiencia
-                    </TableHead>
-                    <TableHead className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
-                      Trigger
-                    </TableHead>
-                    <TableHead className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
-                      Estado
-                    </TableHead>
-                    <TableHead className="text-right text-xs uppercase tracking-[0.2em] text-muted-foreground">
-                      Resultado
-                    </TableHead>
-                  </TableRow>
-                </TableHeader>
-                <TableBody>
-                  {workflows.map((workflow) => (
-                    <TableRow key={workflow.name} className="border-white/10">
-                      <TableCell className="text-sm text-white">{workflow.name}</TableCell>
-                      <TableCell className="text-xs text-muted-foreground">{workflow.audience}</TableCell>
-                      <TableCell className="text-xs text-muted-foreground">{workflow.trigger}</TableCell>
-                      <TableCell className="text-xs text-primary">{workflow.status}</TableCell>
-                      <TableCell className="text-right text-xs text-muted-foreground">
-                        {workflow.performance}
-                      </TableCell>
+            <CardContent className="rounded-2xl border border-white/10 bg-white/5">
+              <div className="overflow-x-auto">
+                <Table>
+                  <TableHeader>
+                    <TableRow className="border-white/10">
+                      <TableHead className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
+                        Workflow
+                      </TableHead>
+                      <TableHead className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
+                        Audiencia
+                      </TableHead>
+                      <TableHead className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
+                        Trigger
+                      </TableHead>
+                      <TableHead className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
+                        Estado
+                      </TableHead>
+                      <TableHead className="text-right text-xs uppercase tracking-[0.2em] text-muted-foreground">
+                        Resultado
+                      </TableHead>
                     </TableRow>
-                  ))}
-                </TableBody>
-              </Table>
+                  </TableHeader>
+                  <TableBody>
+                    {workflows.map((workflow) => (
+                      <TableRow key={workflow.name} className="border-white/10">
+                        <TableCell className="text-sm text-white">{workflow.name}</TableCell>
+                        <TableCell className="text-xs text-muted-foreground">{workflow.audience}</TableCell>
+                        <TableCell className="text-xs text-muted-foreground">{workflow.trigger}</TableCell>
+                        <TableCell className="text-xs text-primary">{workflow.status}</TableCell>
+                        <TableCell className="text-right text-xs text-muted-foreground">
+                          {workflow.performance}
+                        </TableCell>
+                      </TableRow>
+                    ))}
+                  </TableBody>
+                </Table>
+              </div>
             </CardContent>
           </Card>
         </TabsContent>

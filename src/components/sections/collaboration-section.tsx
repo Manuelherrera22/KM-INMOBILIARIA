@@ -31,7 +31,7 @@ const streamEvents = [
 export function CollaborationSection() {
   return (
     <section className="py-24">
-      <div className="mx-auto max-w-6xl px-6 sm:px-8">
+      <div className="mx-auto max-w-6xl px-4 sm:px-8">
         <div className="grid gap-10 lg:grid-cols-[1.2fr_1fr]">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

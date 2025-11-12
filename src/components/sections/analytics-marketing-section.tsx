@@ -15,21 +15,21 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Progress } from "@/components/ui/progress";
 
 const channels = [
-  { name: "Portales aliados", reach: "1.2M impresiones", performance: 82 },
-  { name: "Campañas pagas", reach: "860K impresiones", performance: 74 },
-  { name: "Landing personalizadas", reach: "420K visitas", performance: 68 },
+  { name: "Portales aliados LATAM", reach: "1.8M impresiones", performance: 84 },
+  { name: "Campañas pagas regionales", reach: "1.1M impresiones", performance: 76 },
+  { name: "Landing multilocalizadas", reach: "520K visitas", performance: 71 },
 ];
 
 const marketInsights = [
-  { label: "Demanda Palermo Soho", value: "+18%", detail: "vs mes anterior" },
-  { label: "Ticket promedio USD", value: "$284K", detail: "Departamentos 3 amb." },
-  { label: "Cap rate alquiler", value: "5.4%", detail: "+0.6pp" },
+  { label: "Demanda CDMX (Polanco)", value: "+22%", detail: "vs semana anterior" },
+  { label: "Ticket promedio Bogotá", value: "COP 1.2B", detail: "Apartamentos 3H" },
+  { label: "Cap rate renta Santiago", value: "6.1%", detail: "+0.8pp" },
 ];
 
 export function AnalyticsMarketingSection() {
   return (
     <section id="analitica" className="py-24 scroll-mt-32">
-      <div className="mx-auto max-w-6xl px-6 sm:px-8">
+      <div className="mx-auto max-w-6xl px-4 sm:px-8">
         <div className="grid gap-10 lg:grid-cols-[1.2fr_1fr]">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -44,11 +44,12 @@ export function AnalyticsMarketingSection() {
                   Marketing + Analítica
                 </Badge>
                 <h2 className="mt-4 text-3xl font-semibold text-white sm:text-4xl">
-                  Despliega campañas y decisiones basadas en inteligencia de datos.
+                  Haz crecer tu negocio regional con inteligencia de datos latinoamericana.
                 </h2>
                 <p className="mt-3 max-w-2xl text-sm text-muted-foreground">
-                  Diseña landings personalizadas, activa campañas omnicanal y recibe análisis de
-                  mercado en tiempo real para ajustar pricing y estrategias de captación.
+                  Diseña landings localizadas, activa campañas omnicanal por país y recibe análisis
+                  de mercado en tiempo real para ajustar pricing, mix de moneda y estrategias de
+                  captación en México, Colombia, Chile y Argentina.
                 </p>
               </div>
               <div className="flex items-center gap-3 rounded-2xl border border-white/10 bg-black/20 px-4 py-3 text-xs text-muted-foreground">
@@ -58,22 +59,22 @@ export function AnalyticsMarketingSection() {
             </div>
 
             <Tabs defaultValue="channels" className="mt-8">
-              <TabsList className="flex w-full justify-start gap-2 rounded-full bg-black/30 p-1 text-xs uppercase">
+              <TabsList className="flex w-full justify-start gap-2 overflow-x-auto whitespace-nowrap rounded-full bg-black/30 p-1 text-xs uppercase">
                 <TabsTrigger
                   value="channels"
-                  className="rounded-full data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+                  className="whitespace-nowrap rounded-full data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
                 >
                   Canales
                 </TabsTrigger>
                 <TabsTrigger
                   value="market"
-                  className="rounded-full data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+                  className="whitespace-nowrap rounded-full data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
                 >
                   Insights de mercado
                 </TabsTrigger>
                 <TabsTrigger
                   value="audiences"
-                  className="rounded-full data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+                  className="whitespace-nowrap rounded-full data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
                 >
                   Audiencias
                 </TabsTrigger>

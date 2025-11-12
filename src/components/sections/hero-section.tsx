@@ -2,7 +2,16 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { Building2, Bot, Globe2, Headset, Layers, MapPin, Rocket } from "lucide-react";
+import {
+  Building2,
+  Bot,
+  Globe2,
+  Headset,
+  Layers,
+  MapPin,
+  Rocket,
+  Flag,
+} from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
@@ -10,47 +19,52 @@ const highlights = [
   {
     icon: Rocket,
     title: "Onboarding exprés",
-    description: "Carga propiedades, clientes y pipelines en minutos.",
+    description: "Carga inventarios regionales de Argentina a México en minutos.",
   },
   {
     icon: Globe2,
     title: "Portales conectados",
-    description: "Publica y sincroniza automáticamente en +25 marketplaces.",
+    description: "Publica y sincroniza automáticamente en Mercado Libre, VivaReal y Plusvalía.",
   },
   {
     icon: Bot,
     title: "Automatizaciones inteligentes",
-    description: "Recordatorios, nurtures y reportes con IA generativa.",
+    description: "Recordatorios, nurtures y reportes con IA multilingüe (es/en/pt).",
   },
   {
     icon: Headset,
     title: "Atención 360º",
-    description: "Chat, video y bots para acompañar a tus clientes siempre.",
+    description: "Chat, video y bots adaptados a husos horarios LATAM.",
   },
   {
     icon: Layers,
     title: "Espacios colaborativos",
-    description: "Trabaja en equipo con notas, versiones y control granular.",
+    description: "Comparte negocios entre brokers de distintas plazas latinoamericanas.",
   },
   {
     icon: Building2,
     title: "Todo el ciclo inmobiliario",
-    description: "Desde la captación hasta la firma digital y el cierre.",
+    description: "Desde la captación hasta la firma digital con regulaciones locales.",
+  },
+  {
+    icon: Flag,
+    title: "Compliance regional",
+    description: "Gestión fiscal y KYC pensada para Colombia, México, Chile y Argentina.",
   },
 ];
 
 const propertyPreview = {
-  title: "Sky Residence · Torre Nova",
-  location: "Puerto Madero, Buenos Aires",
-  price: "USD 425K",
-  area: "142 m² · 3 ambientes",
-  availability: "Disponible · Posesión inmediata",
+  title: "Bahía Norte Residences",
+  location: "Puerto Cancún · Quintana Roo, México",
+  price: "USD 385K",
+  area: "135 m² · 2 recámaras + flex",
+  availability: "Disponible · Entrega 2T 2026",
   image:
-    "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1200&q=80",
+    "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1400&q=80",
   stats: [
-    { label: "Reservas activas", value: "6" },
-    { label: "Visitas esta semana", value: "48" },
-    { label: "Probabilidad de cierre", value: "82%" },
+    { label: "Reservas activas LATAM", value: "14" },
+    { label: "Leads México · Colombia", value: "68" },
+    { label: "Probabilidad de cierre", value: "84%" },
   ],
 };
 
@@ -58,7 +72,7 @@ export function HeroSection() {
   return (
     <section
       id="plataforma"
-      className="relative overflow-hidden pb-20 pt-24 sm:pt-28 lg:pt-32 scroll-mt-32"
+      className="relative overflow-hidden pb-20 pt-20 sm:pt-28 lg:pt-32 scroll-mt-32"
     >
       <div className="absolute inset-0 -z-10 opacity-50">
         <div className="absolute inset-0 blur-3xl">
@@ -68,7 +82,7 @@ export function HeroSection() {
         </div>
       </div>
 
-      <div className="mx-auto flex max-w-6xl flex-col gap-16 px-6 sm:px-8">
+      <div className="mx-auto flex max-w-6xl flex-col gap-12 px-4 sm:gap-16 sm:px-8">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
@@ -77,17 +91,17 @@ export function HeroSection() {
         >
           <div className="space-y-6">
             <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1 text-xs font-medium uppercase tracking-[0.3em] text-muted-foreground">
-              Plataforma proptech enterprise
+              Plataforma proptech regional
             </span>
             <h1 className="text-balance text-4xl font-semibold leading-[1.1] text-white sm:text-5xl lg:text-[3.4rem]">
-              Impulsa tu negocio inmobiliario con un centro de operaciones
-              digital todo en uno.
+              Conecta la operación inmobiliaria de Latinoamérica en un solo
+              centro de mando digital.
             </h1>
             <p className="max-w-2xl text-pretty text-lg text-muted-foreground sm:text-xl">
-              KM Inmobiliaria unifica publicación multicanal, tours virtuales
-              hiperrealistas, CRM colaborativo, automatizaciones de venta y
-              analítica avanzada para cerrar operaciones más rápido y con mejor
-              experiencia.
+              KM Inmobiliaria coordina tu catálogo entre Ciudad de México,
+              Bogotá, Santiago y Buenos Aires. Publica en portales locales,
+              ofrece tours inmersivos, gestiona leads con IA regional y firma
+              digitalmente cumpliendo la normativa de cada país.
             </p>
             <div className="flex flex-wrap items-center gap-4">
               <Button asChild size="lg" className="h-12 rounded-full px-8 text-base">
@@ -134,6 +148,7 @@ export function HeroSection() {
                 priority
                 sizes="(max-width: 1024px) 100vw, 480px"
                 className="object-cover transition-transform duration-700 hover:scale-105"
+                unoptimized
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
               <div className="absolute left-5 right-5 bottom-5 space-y-2 text-white">

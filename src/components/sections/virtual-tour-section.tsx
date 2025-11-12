@@ -34,14 +34,14 @@ export function VirtualTourSection() {
         <div className="absolute -right-24 bottom-10 h-[360px] w-[360px] rounded-full bg-secondary/25 blur-[200px]" />
       </div>
 
-      <div className="mx-auto max-w-6xl px-6 sm:px-8">
+      <div className="mx-auto max-w-6xl px-4 sm:px-8">
         <SectionHeading
           eyebrow="Tours virtuales 360º"
           title="Recorridos hiperrealistas que convierten interés en visitas calificadas."
           description="Ofrece experiencias inmersivas con anotaciones contextuales, analítica de interacción y guías automatizadas para asesorar a tus clientes como si estuvieras allí."
         />
 
-        <div className="mt-16 grid gap-10 lg:grid-cols-[1.3fr_1fr]">
+        <div className="mt-12 grid gap-8 lg:grid-cols-[1.3fr_1fr]">
           <motion.div
             initial={{ opacity: 0, y: 32 }}
             whileInView={{ opacity: 1, y: 0 }}

@@ -15,7 +15,7 @@ const workflowSteps = [
 export function DocumentSuiteSection() {
   return (
     <section id="documentos" className="py-24 scroll-mt-32">
-      <div className="mx-auto max-w-6xl px-6 sm:px-8">
+      <div className="mx-auto max-w-6xl px-4 sm:px-8">
         <div className="grid gap-8 lg:grid-cols-[1fr_1.2fr]">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

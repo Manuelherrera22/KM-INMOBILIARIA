@@ -42,42 +42,44 @@ const velocityData = {
 
 const automationItems = [
   {
-    title: "Seguimiento post visita",
-    audience: "Clientes premium",
-    touchpoints: "Email + WhatsApp + recordatorio asesor",
-    conversion: "42%",
+    title: "Seguimiento post visita CDMX",
+    audience: "Clientes premium México",
+    touchpoints: "WhatsApp Business + correo + recordatorio asesor",
+    conversion: "44%",
   },
   {
-    title: "Campaña lanzamiento Torre Nova",
-    audience: "Inversores activos",
-    touchpoints: "Email + Ads + Reporte personalizado",
-    conversion: "31%",
+    title: "Campaña lanzamiento Medellín",
+    audience: "Inversores activos Colombia",
+    touchpoints: "Email + Ads Meta + reporte en COP/USD",
+    conversion: "33%",
   },
   {
-    title: "Reactivación leads fríos",
+    title: "Reactivación leads fríos Chile",
     audience: "Propietarios potenciales",
-    touchpoints: "Email + Llamada automática + Tour 360",
-    conversion: "22%",
+    touchpoints: "Email + llamada automática + tour 360 con subtítulos",
+    conversion: "24%",
   },
 ];
+
 
 export function CrmAutomationSection() {
   const [activeTab, setActiveTab] = React.useState("pipeline");
   return (
     <section id="crm" className="scroll-mt-32 py-24">
       <div id="automatizacion" className="hidden" />
-      <div className="mx-auto max-w-6xl px-6 sm:px-8">
+      <div className="mx-auto max-w-6xl px-4 sm:px-8">
         <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
           <div>
             <Badge variant="outline" className="border-primary/40 bg-primary/10 text-primary">
-              CRM + Automatizaciones
+              CRM LATAM + Automatizaciones
             </Badge>
             <h2 className="mt-4 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-              Domina tu pipeline con IA copiloto y workflows inteligentes.
+              Domina tu pipeline regional con IA copiloto y workflows inteligentes.
             </h2>
             <p className="mt-3 max-w-2xl text-base text-muted-foreground">
-              Prioriza leads, acelera negociaciones y automatiza cada interacción crítica.
-              Organiza todas las oportunidades en tableros dinámicos con analítica predictiva.
+              Prioriza leads, acelera negociaciones y automatiza cada interacción crítica con
+              plantillas listas para créditos hipotecarios, leads extranjeros y conversiones en
+              múltiples monedas.
             </p>
           </div>
           <div className="flex gap-4 text-sm text-muted-foreground">
@@ -98,14 +100,14 @@ export function CrmAutomationSection() {
           className="mt-10 grid gap-6 lg:grid-cols-[1.35fr_1fr]"
         >
           <div className="rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur">
-            <TabsList className="grid grid-cols-3 rounded-full bg-black/40 p-1 text-xs uppercase">
-              <TabsTrigger value="pipeline" className="rounded-full data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
+            <TabsList className="flex w-full justify-start gap-2 overflow-x-auto rounded-full bg-black/40 p-1 text-xs uppercase">
+              <TabsTrigger value="pipeline" className="whitespace-nowrap rounded-full data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
                 Pipeline
               </TabsTrigger>
-              <TabsTrigger value="velocity" className="rounded-full data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
+              <TabsTrigger value="velocity" className="whitespace-nowrap rounded-full data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
                 Velocidad
               </TabsTrigger>
-              <TabsTrigger value="automatizaciones" className="rounded-full data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
+              <TabsTrigger value="automatizaciones" className="whitespace-nowrap rounded-full data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
                 Automatizaciones
               </TabsTrigger>
             </TabsList>
@@ -158,40 +160,42 @@ export function CrmAutomationSection() {
             </TabsContent>
 
             <TabsContent value="automatizaciones" className="mt-8 focus-visible:outline-none">
-              <Table>
-                <TableHeader>
-                  <TableRow className="border-white/5">
-                    <TableHead className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
-                      Campaña
-                    </TableHead>
-                    <TableHead className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
-                      Audiencia
-                    </TableHead>
-                    <TableHead className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
-                      Flujo
-                    </TableHead>
-                    <TableHead className="text-right text-xs uppercase tracking-[0.2em] text-muted-foreground">
-                      Conversión
-                    </TableHead>
-                  </TableRow>
-                </TableHeader>
-                <TableBody>
-                  {automationItems.map((item) => (
-                    <TableRow key={item.title} className="border-white/5">
-                      <TableCell className="text-sm text-white">{item.title}</TableCell>
-                      <TableCell className="text-sm text-muted-foreground">
-                        {item.audience}
-                      </TableCell>
-                      <TableCell className="text-sm text-muted-foreground">
-                        {item.touchpoints}
-                      </TableCell>
-                      <TableCell className="text-right text-sm font-semibold text-primary">
-                        {item.conversion}
-                      </TableCell>
+              <div className="overflow-x-auto">
+                <Table>
+                  <TableHeader>
+                    <TableRow className="border-white/5">
+                      <TableHead className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
+                        Campaña
+                      </TableHead>
+                      <TableHead className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
+                        Audiencia
+                      </TableHead>
+                      <TableHead className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
+                        Flujo
+                      </TableHead>
+                      <TableHead className="text-right text-xs uppercase tracking-[0.2em] text-muted-foreground">
+                        Conversión
+                      </TableHead>
                     </TableRow>
-                  ))}
-                </TableBody>
-              </Table>
+                  </TableHeader>
+                  <TableBody>
+                    {automationItems.map((item) => (
+                      <TableRow key={item.title} className="border-white/5">
+                        <TableCell className="text-sm text-white">{item.title}</TableCell>
+                        <TableCell className="text-sm text-muted-foreground">
+                          {item.audience}
+                        </TableCell>
+                        <TableCell className="text-sm text-muted-foreground">
+                          {item.touchpoints}
+                        </TableCell>
+                        <TableCell className="text-right text-sm font-semibold text-primary">
+                          {item.conversion}
+                        </TableCell>
+                      </TableRow>
+                    ))}
+                  </TableBody>
+                </Table>
+              </div>
             </TabsContent>
           </div>
 

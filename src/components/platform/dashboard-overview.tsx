@@ -275,34 +275,36 @@ export function DashboardOverview() {
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-3">
-            <Table>
-              <TableHeader>
-                <TableRow className="border-white/10">
-                  <TableHead className="text-xs uppercase tracking-[0.3em] text-muted-foreground">
-                    Propiedad
-                  </TableHead>
-                  <TableHead className="text-xs uppercase tracking-[0.3em] text-muted-foreground">
-                    Canal
-                  </TableHead>
-                  <TableHead className="text-right text-xs uppercase tracking-[0.3em] text-muted-foreground">
-                    Estado
-                  </TableHead>
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                {topProperties.map((property) => (
-                  <TableRow key={property.name} className="border-white/10">
-                    <TableCell className="text-sm text-white">{property.name}</TableCell>
-                    <TableCell className="text-xs text-muted-foreground">
-                      {property.channel}
-                    </TableCell>
-                    <TableCell className="text-right text-xs text-primary">
-                      {property.status}
-                    </TableCell>
+            <div className="overflow-x-auto">
+              <Table>
+                <TableHeader>
+                  <TableRow className="border-white/10">
+                    <TableHead className="text-xs uppercase tracking-[0.3em] text-muted-foreground">
+                      Propiedad
+                    </TableHead>
+                    <TableHead className="text-xs uppercase tracking-[0.3em] text-muted-foreground">
+                      Canal
+                    </TableHead>
+                    <TableHead className="text-right text-xs uppercase tracking-[0.3em] text-muted-foreground">
+                      Estado
+                    </TableHead>
                   </TableRow>
-                ))}
-              </TableBody>
-            </Table>
+                </TableHeader>
+                <TableBody>
+                  {topProperties.map((property) => (
+                    <TableRow key={property.name} className="border-white/10">
+                      <TableCell className="text-sm text-white">{property.name}</TableCell>
+                      <TableCell className="text-xs text-muted-foreground">
+                        {property.channel}
+                      </TableCell>
+                      <TableCell className="text-right text-xs text-primary">
+                        {property.status}
+                      </TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </div>
             <Separator className="bg-white/10" />
             <Button variant="ghost" className="w-full justify-center text-xs text-muted-foreground hover:text-white">
               Ver catálogo completo

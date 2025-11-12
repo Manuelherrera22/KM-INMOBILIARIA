@@ -8,45 +8,57 @@ import { Button } from "@/components/ui/button";
 
 const signaturePortfolio = [
   {
-    name: "Sky Residence · Torre Nova",
-    location: "Puerto Madero, Buenos Aires",
-    price: "USD 425K",
+    name: "Mirador Reforma 290",
+    location: "Ciudad de México · CDMX",
+    price: "MXN 9.6M",
     status: "Preventa exclusiva",
     image:
-      "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1200&q=80",
-    highlights: ["142 m² · 3 suites", "Amenities premium", "Vista panorámica Río"],
+      "https://images.unsplash.com/photo-1529429617124-aee0a66aab4a?auto=format&fit=crop&w=1200&q=80",
+    highlights: [
+      "165 m² · 3 recámaras",
+      "Amenidades sky lounge",
+      "Integrado a SISUB, MLS CDMX",
+    ],
   },
   {
-    name: "Altos del Parque Residences",
-    location: "Palermo Soho, Buenos Aires",
-    price: "USD 312K",
+    name: "Bosque Alto 8",
+    location: "Bogotá · Chapinero Alto",
+    price: "COP 1.48B",
     status: "Disponible · Firma inmediata",
     image:
-      "https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1200&q=80",
-    highlights: ["120 m² · Dúplex", "Terraza con parrilla", "Cocheras inteligentes"],
+      "https://images.unsplash.com/photo-1542317854-07132d9d0026?auto=format&fit=crop&w=1200&q=80",
+    highlights: [
+      "180 m² · Penthouse dúplex",
+      "Terraza con vista a los cerros",
+      "Escrituración digital Supernotariado",
+    ],
   },
   {
-    name: "Catalinas Corporate Tower",
-    location: "Catalinas Norte, Buenos Aires",
-    price: "USD 3.5M",
+    name: "Vitacura Corporate Hub",
+    location: "Santiago de Chile · Vitacura",
+    price: "UF 115.000",
     status: "Entrega enero 2026",
     image:
-      "https://images.unsplash.com/photo-1505692794400-5e0c0f687b84?auto=format&fit=crop&w=1200&q=80",
-    highlights: ["850 m² · Oficinas AAA", "LEED Gold", "Sky lobby + salas ejecutivas"],
+      "https://images.unsplash.com/photo-1487956382158-bb926046304a?auto=format&fit=crop&w=1200&q=80",
+    highlights: [
+      "1.050 m² · Oficinas clase A+",
+      "Certificación CES & LEED",
+      "Gestión de arriendos en UF automatizada",
+    ],
   },
 ];
 
 export function PropertyShowcaseSection() {
   return (
-    <section id="portafolio" className="scroll-mt-32 pb-24">
-      <div className="mx-auto max-w-6xl px-6 sm:px-8">
+    <section id="portafolio" className="scroll-mt-32 pb-20 sm:pb-24">
+      <div className="mx-auto max-w-6xl px-4 sm:px-8">
         <SectionHeading
           eyebrow="Colección inmobiliaria"
           title="Propiedades premium gestionadas de punta a punta en KM Inmobiliaria."
           description="Visualiza cómo la plataforma centraliza fichas, recorridos y analítica para cada activo. Captura, comercializa y firma sin perder consistencia de marca."
         />
 
-        <div className="mt-16 grid gap-6 lg:grid-cols-3">
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {signaturePortfolio.map((property, index) => (
             <motion.article
               key={property.name}
@@ -63,6 +75,7 @@ export function PropertyShowcaseSection() {
                   fill
                   sizes="(max-width: 1024px) 100vw, 380px"
                   className="object-cover transition-transform duration-700 hover:scale-105"
+                  unoptimized
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
                 <div className="absolute bottom-4 left-4 right-4 space-y-2 text-white">
