@@ -1,6 +1,7 @@
 [build]
   command = "cd frontend && npm install && npm run build"
   publish = "frontend/dist"
+  base = "."
   
 [build.environment]
   NODE_VERSION = "18"
@@ -9,4 +10,11 @@
   from = "/*"
   to = "/index.html"
   status = 200
+
+# Branch configuration
+[context.production]
+  command = "cd frontend && npm install && npm run build"
+  
+[context.branch-deploy]
+  command = "cd frontend && npm install && npm run build"
 
