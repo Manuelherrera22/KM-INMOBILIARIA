@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import OddsComparisonTable from '../components/OddsComparisonTable';
-import { useLiveOdds } from '../hooks/useMockData';
 
 export default function OddsComparison() {
   const [selectedEvent, setSelectedEvent] = useState<string>('1');
@@ -216,9 +215,10 @@ export default function OddsComparison() {
   useEffect(() => {
     const interval = setInterval(() => {
       setOddsData(prev => {
-        const newData = { ...prev };
+        const newData: typeof prev = { ...prev };
         Object.keys(newData).forEach(eventId => {
-          newData[eventId as keyof typeof newData] = newData[eventId as keyof typeof newData].map(odd => {
+          const eventOdds = newData[eventId as keyof typeof newData];
+          newData[eventId as keyof typeof newData] = eventOdds.map((odd: any) => {
             // Pequeñas variaciones en las cuotas (±0.03)
             const homeVariation = (Math.random() - 0.5) * 0.06;
             const awayVariation = (Math.random() - 0.5) * 0.06;
@@ -236,11 +236,11 @@ export default function OddsComparison() {
               ...odd,
               home: Math.round(newHome * 100) / 100,
               away: Math.round(newAway * 100) / 100,
-              draw: newDraw ? Math.round(newDraw * 100) / 100 : undefined,
+              ...(newDraw !== undefined && { draw: Math.round(newDraw * 100) / 100 }),
               value: Math.round(newValue * 10) / 10,
               lastUpdated: new Date().toISOString(),
             };
-          });
+          }) as any;
         });
         return newData;
       });

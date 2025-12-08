@@ -21,7 +21,6 @@ export default function ValueBetsHeatmap({ data }: ValueBetsHeatmapProps) {
     : data.filter(d => d.sport === selectedSport);
 
   const maxValue = Math.max(...filteredData.map(d => d.value));
-  const maxCount = Math.max(...filteredData.map(d => d.count));
 
   const getIntensity = (value: number, max: number) => {
     const percentage = (value / max) * 100;
