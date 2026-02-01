@@ -134,6 +134,57 @@ h4,
   animation-delay: 150ms;
 }
 
+/* Responsive Breakpoints */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+
+  .heading-lg {
+    font-size: 2.5rem !important;
+    /* Override inline styles if necessary */
+  }
+
+  /* Force grids to single column or smaller scale on mobile */
+  .property-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .glass-panel:hover {
+    transform: none;
+    /* Disable hover lift on touch devices */
+  }
+}
+
+/* Custom Class for the Grid to avoid complex inline media queries */
+.property-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin: 0 auto 6rem;
+  max-width: 1400px;
+}
+
+.manifesto-section {
+  padding: 0 2rem 8rem;
+}
+
+.questions-section {
+  padding: 2rem 2rem 6rem;
+}
+
+.nav-container {
+  padding: 1.5rem 2rem;
+}
+
+.map-overlay {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  z-index: 400;
+  max-width: 300px;
+}
+
 .animate-delay-200 {
   animation-delay: 300ms;
 }

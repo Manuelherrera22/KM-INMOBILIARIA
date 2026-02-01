@@ -35,9 +35,9 @@ export default async function Home() {
       backgroundPosition: 'center'
     }}>
       {/* Navigation: Persistent & Platform Style */}
-      <nav style={{
+      <nav className="nav-container" style={{
         position: 'fixed', top: 0, left: 0, width: '100%',
-        padding: '1.5rem 2rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', zIndex: 100,
+        display: 'flex', justifyContent: 'space-between', alignItems: 'center', zIndex: 100,
         background: 'rgba(5,5,5,0.8)', backdropFilter: 'blur(10px)', borderBottom: '1px solid #111'
       }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '2rem' }}>
@@ -53,20 +53,18 @@ export default async function Home() {
 
       {/* 1. HERO: BRAND STATEMENT + VIDEO */}
       <section style={{ paddingTop: '8rem', paddingBottom: '4rem', paddingLeft: '2rem', paddingRight: '2rem', textAlign: 'center' }}>
-        <h1 className="animate-fade-up" style={{
-          fontFamily: 'var(--font-heading)',
-          fontSize: 'clamp(2.5rem, 5vw, 4rem)',
-          fontWeight: '700',
+        <h1 className="heading-lg animate-fade-up" style={{
+          fontSize: 'clamp(3rem, 6vw, 5rem)', // Fluid sizing 
+          marginBottom: '1rem',
           lineHeight: '1.1',
-          marginBottom: '3rem',
-          color: '#fff',
-          letterSpacing: '-0.02em'
+          textTransform: 'uppercase',
+          letterSpacing: '0.05em'
         }}>
           KM PLATAFORMA<br /><span style={{ color: 'var(--primary)' }}>INMOBILIARIA</span>
         </h1>
 
         {/* High Demand Inventory Grid */}
-        <div style={{ maxWidth: '1400px', margin: '0 auto 6rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '2rem' }}>
+        <div className="property-grid">
           {/* Show only the latest 3 properties (New Arrivals) */}
           {featuredProperties.map((p: any) => (
             <Link key={p.id} href={`/p/${p.id}`} className="glass-panel" style={{
@@ -123,12 +121,12 @@ export default async function Home() {
       </section>
 
       {/* 2. THE STORY / MANIFESTO (Emotional Hook) */}
-      <section style={{ padding: '0 2rem 8rem', maxWidth: '1000px', margin: '0 auto', textAlign: 'center' }}>
+      <section className="manifesto-section" style={{ padding: '0 1rem 8rem', maxWidth: '1000px', margin: '0 auto', textAlign: 'center' }}>
         <div className="animate-fade-up">
           <span style={{ color: 'var(--primary)', fontSize: '0.9rem', letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: '1.5rem', display: 'block', fontWeight: 'bold' }}>
             La Visión
           </span>
-          <h2 style={{ fontSize: '3rem', marginBottom: '2.5rem', fontFamily: 'var(--font-heading)', lineHeight: '1.2', textShadow: '0 4px 20px rgba(0,0,0,0.5)' }}>
+          <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', marginBottom: '2.5rem', fontFamily: 'var(--font-heading)', lineHeight: '1.2', textShadow: '0 4px 20px rgba(0,0,0,0.5)' }}>
             "No vendemos metros cuadrados.<br />
             <span style={{ background: 'linear-gradient(to right, #fff, #aaa)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', fontStyle: 'italic' }}>Diseñamos legados."</span>
           </h2>
@@ -141,8 +139,8 @@ export default async function Home() {
       </section>
 
       {/* 3. THE 3 QUESTIONS (Rational Reassurance) */}
-      <section style={{ padding: '2rem 2rem 6rem', maxWidth: '1200px', margin: '0 auto' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
+      <section className="questions-section" style={{ maxWidth: '1200px', margin: '0 auto' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
           {/* Q1 */}
           <div className="glass-panel" style={{ padding: '2.5rem', background: '#0a0a0a', borderRadius: '8px', border: '1px solid #222' }}>
             <h3 style={{ color: 'var(--primary)', fontSize: '0.9rem', textTransform: 'uppercase', marginBottom: '1rem', letterSpacing: '0.1em' }}>¿Qué hacemos?</h3>
@@ -176,11 +174,9 @@ export default async function Home() {
       {/* 3.5. STRATEGIC LOCATION (MAP) */}
       <section style={{ paddingTop: '0', paddingBottom: '0', position: 'relative', height: '600px', overflow: 'hidden', borderTop: '1px solid #222', borderBottom: '1px solid #222' }}>
         {/* Overlay Title */}
-        <div style={{
-          position: 'absolute', top: '2rem', left: '2rem', zIndex: 400,
+        <div className="map-overlay" style={{
           background: 'rgba(5,5,5,0.9)', backdropFilter: 'blur(10px)',
           padding: '1.5rem', borderRadius: '8px', border: '1px solid #333',
-          maxWidth: '300px',
           boxShadow: '0 10px 30px rgba(0,0,0,0.5)'
         }}>
           <h3 style={{ fontSize: '1.2rem', color: '#fff', marginBottom: '0.5rem' }}>Ubicación & Plusvalía</h3>
@@ -213,7 +209,7 @@ export default async function Home() {
       <footer style={{ padding: '4rem 2rem', background: '#050505', borderTop: '1px solid #111', color: '#444', textAlign: 'center' }}>
         <div style={{ marginBottom: '1.5rem', fontSize: '0.9rem' }}>Av. 12 de Octubre & Cordero, Quito, Ecuador</div>
 
-        <div style={{ display: 'flex', justifyContent: 'center', gap: '2rem', marginBottom: '2rem', fontSize: '0.8rem' }}>
+        <div style={{ display: 'flex', justifyContent: 'center', gap: '2rem', marginBottom: '2rem', fontSize: '0.8rem', flexWrap: 'wrap' }}>
           <Link href="/privacidad" style={{ color: '#666', textDecoration: 'none' }}>Privacidad</Link>
           <Link href="/cookies" style={{ color: '#666', textDecoration: 'none' }}>Cookies</Link>
         </div>
