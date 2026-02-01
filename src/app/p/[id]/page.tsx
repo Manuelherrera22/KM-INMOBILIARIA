@@ -25,6 +25,45 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
 }
 
 async function getProperty(id: string) {
+    // 1. Check for Fallback IDs (Serverless/Netlify Handler)
+    if (id === 'fallback-1') return {
+        id: 'fallback-1',
+        title: "Penthouse The Grand | La Carolina",
+        address: "Av. República y Eloy Alfaro",
+        price: 450000,
+        type: "APARTMENT",
+        status: "ACTIVE",
+        interestCount: 42,
+        description: "Vista 360 al Parque. Acabados importados de Italia. Ascensor directo. Una joya arquitectónica en el corazón financiero. Cuenta con terraza privada, acabados de mármol y sistema de domótica integral.",
+        images: "https://images.unsplash.com/photo-1567684014761-b65e2e59b9eb?q=80&w=1000&auto=format&fit=crop",
+        metrics: [{ views: 1205 }]
+    }
+    if (id === 'fallback-2') return {
+        id: 'fallback-2',
+        title: "Mansion Glass House | Cumbayá",
+        address: "Urb. Jacarandá",
+        price: 1200000,
+        type: "HOUSE",
+        status: "ACTIVE",
+        interestCount: 18,
+        description: "Arquitectura invisible. Piscina infinita. 2000m2 de terreno. Diseñada por arquitectos de renombre, esta propiedad se funde con la naturaleza. Espacios abiertos, luz natural y máxima seguridad en urbanización exclusiva.",
+        images: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=1000&auto=format&fit=crop",
+        metrics: [{ views: 850 }]
+    }
+    if (id === 'fallback-3') return {
+        id: 'fallback-3',
+        title: "Loft Industrial | Guápulo",
+        address: "Camino de Orellana",
+        price: 280000,
+        type: "APARTMENT",
+        status: "ACTIVE",
+        interestCount: 35,
+        description: "Historia y Modernidad. Doble altura. Vista al valle. Un espacio para creativos y amantes del diseño. Muros de ladrillo visto, ventanales de piso a techo y una ubicación bohemia con las mejores vistas de la ciudad.",
+        images: "https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=1000&auto=format&fit=crop",
+        metrics: [{ views: 2300 }]
+    }
+
+    // 2. Try DB Fetch
     try {
         return await prisma.property.findUnique({
             where: { id },
