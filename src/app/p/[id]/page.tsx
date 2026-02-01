@@ -9,17 +9,17 @@ export const dynamic = 'force-dynamic'
 // SEO Metadata Generator
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }) {
     const { id } = await params
-    const property = await prisma.property.findUnique({ where: { id } })
+    const property = await getProperty(id)
 
     if (!property) return { title: 'Propiedad No Encontrada' }
 
     return {
         title: `${property.title} | KMINMOBILIARIA`,
-        description: `Propiedad exclusiva en venta. ${property.address}. Precio: $${property.price}`,
+        description: `Propiedad exclusiva en venta. ${property.address}. Precio: $${new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(property.price)}`,
         openGraph: {
             title: property.title,
             description: 'Descubre esta propiedad exclusiva en KMINMOBILIARIA.',
-            images: ['/og-image-placeholder.jpg'], // In a real app, this would be the property image
+            images: [property.images || '/og-image-placeholder.jpg'],
         }
     }
 }
